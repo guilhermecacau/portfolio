@@ -7,19 +7,19 @@ const projects = [
   {
     title: 'Sistema de Inventário Avançado',
     description: 'Um sistema de inventário completo com suporte para itens, categorias e customização de UI.',
-    image: 'https://via.placeholder.com/300x200', // Substitua com a imagem do seu projeto
+    video: 'https://www.youtube.com/embed/SGT2bxvnIvU', // Substitua com o link do seu vídeo
     link: '#' // Substitua com o link para o seu projeto
   },
   {
     title: 'Mapa de Aventura com Quests',
     description: 'Criação de um mapa interativo com sistema de quests, diálogos com NPCs e recompensas.',
-    image: 'https://via.placeholder.com/300x200', // Substitua com a imagem do seu projeto
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Substitua com o link do seu vídeo
     link: '#' // Substitua com o link para o seu projeto
   },
   {
     title: 'Minigame de Corrida',
     description: 'Desenvolvimento de um minigame de corrida com power-ups, diferentes pistas e placar de líderes.',
-    image: 'https://via.placeholder.com/300x200', // Substitua com a imagem do seu projeto
+    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Substitua com o link do seu vídeo
     link: '#' // Substitua com o link para o seu projeto
   }
 ];

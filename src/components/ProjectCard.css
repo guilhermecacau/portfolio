@@ -11,10 +11,19 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-image {
+.project-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.project-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 100%;
 }
 
 .project-info {
