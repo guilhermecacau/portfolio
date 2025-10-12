@@ -21,8 +21,8 @@ const Chatbot = () => {
 
   const questions = [
     {
-      question: 'Como posso te contactar?',
-      answer: 'Dm gui_900 no Discord.',
+      question: 'Do you accept %?',
+      answer: 'Sometimes. Only if I see that your game/game idea is interesting and see good potential in it.',
     },
     {
       question: 'Quais tecnologias você usa?',
@@ -129,7 +129,7 @@ const Chatbot = () => {
                   alignItems="center"
                   gap={2}
                 >
-                  <Spinner size="xs" /> <Text fontSize="sm">Digitando...</Text>
+                  <Spinner size="xs" /> <Text fontSize="sm">Typing...</Text>
                 </Box>
               )}
             </VStack>
