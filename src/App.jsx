@@ -2,7 +2,7 @@ import './App.css'
 import ProjectCard from './components/ProjectCard'
 import Chatbot from './components/Chatbot'
 import Typewriter from 'typewriter-effect';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaDiscord } from 'react-icons/fa';
 
 const projects = [
   {
@@ -18,9 +18,9 @@ const projects = [
     link: '#' // Substitua com o link para o seu projeto
   },
     {
-    title: 'Minigame de Corrida',
-    description: 'Desenvolvimento de um minigame de corrida com power-ups, diferentes pistas e placar de líderes.',
-    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Substitua com o link do seu vídeo
+    title: 'Checkpoint Saving System',
+    description: 'A checkpoint saving system for obby games.',
+    video: 'https://www.youtube.com/embed/ZlUNj4mtnKw', // Substitua com o link do seu vídeo
     link: '#' // Substitua com o link para o seu projeto
   }
 ];
@@ -42,11 +42,20 @@ function App() {
 
       <main>
         <section id="about" className="hero" data-aos="fade-in">
-          <h1>Olá, eu sou o Guilherme</h1>
+          <h1>Hi, I'm Guilherme, also known as</h1>
+          <h2 style={{
+            background: "linear-gradient(90deg, #ff0000, #ffff00)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontWeight: "bold"
+          }}> 
+            MC_Worker 
+          </h2>
+
           <div className="subtitle">
             <Typewriter
               options={{
-                strings: ['Scripter Roblox', 'Desenvolvedor de Jogos', 'Criador de Experiências'],
+                strings: ['Roblox Scripter', 'Desenvolvedor de Jogos', 'Criador de Experiências'],
                 autoStart: true,
                 loop: true,
               }}
@@ -55,7 +64,7 @@ function App() {
         </section>
 
         <section id="projects" data-aos="fade-up">
-          <h2>Meus Projetos</h2>
+          <h2>Examples of my work</h2>
           <div className="project-grid">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
@@ -64,29 +73,27 @@ function App() {
         </section>
 
         <section id="skills" data-aos="fade-up">
-          <h2>Minhas Habilidades</h2>
+          <h2>Which concepts can I apply in my scripts?</h2>
           <div className="skills-container">
             <ul>
-              <li>Luau (Roblox Lua)</li>
-              <li>Knit</li>
-              <li>React</li>
-              <li>Typerwriter</li>
-              <li>Github</li>
-              <li>Programação Orientada a Objetos (OOP)</li>
-              <li>Desenvolvimento de UI</li>
-              <li>Gerenciamento de Dados (DataStores)</li>
-              <li>Otimização e Performance</li>
+              <li>Client-Server Connections (RemoteEvents/RemoteFunctions/BindableEvents)</li>
+              <li>Modularity (ModuleScripts)</li>
+              <li>Thermal Throttling (Rate limiting)</li>
+              <li>Manipulation with Coroutines/task</li>
+              <li>Object-Oriented Programming (OOP)</li>
+              <li>Data Handler (DataStores)</li>
+              <li>Collection Service Handler</li>
+              <li>Dirty flag pattern</li>
+              <li>And more!</li>
             </ul>
           </div>
         </section>
 
         <section id="contact" data-aos="fade-up">
           <h2>Contact</h2>
-          <p>You can contact me at anytime in any of these platforms:</p>
+          <p>You can contact me at anytime</p>
           <div className="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://discord.com/users/1136755556036644878" target="_blank" rel="noopener noreferrer"><FaDiscord /></a>
           </div>
         </section>
       </main>
