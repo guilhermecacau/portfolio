@@ -78,11 +78,12 @@ function App() {
             />
           </div>
 
-          <span>
+          <br/><br/><br/><br/>
+          <b>
             I'm a Roblox scripter with +9 months of
             experience creating systems, mechanics, and scripts for
             a smooth gameplay.
-          </span>
+          </b>
         </section>
 
 
