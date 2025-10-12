@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
-import './Chatbot.css';
+import {
+  Box,
+  Button,
+  Collapse,
+  Flex,
+  Heading,
+  IconButton,
+  Text,
+  VStack,
+  useDisclosure,
+  useColorModeValue,
+} from '@chakra-ui/react';
+import { ChatIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, onToggle } = useDisclosure();
   const [messages, setMessages] = useState([]);
   const [selectedQuestion, setSelectedQuestion] = useState('');
 
   const questions = [
     {
       question: 'Como posso te contactar?',
-      answer: 'Dm gui_900 in discord.',
+      answer: 'Dm gui_900 no Discord.',
     },
     {
       question: 'Quais tecnologias você usa?',
@@ -17,7 +29,7 @@ const Chatbot = () => {
     },
     {
       question: 'Onde posso ver seus projetos?',
-      answer: 'Você pode ver meus projetos aqui no meu portfólio ou no meu GitHub.',
+      answer: 'Você pode ver meus projetos aqui no portfólio ou no meu GitHub.',
     },
   ];
 
@@ -33,31 +45,73 @@ const Chatbot = () => {
     }
   };
 
+  const bg = useColorModeValue('gray.800', 'gray.700');
+  const messageBgUser = useColorModeValue('blue.600', 'blue.500');
+  const messageBgBot = useColorModeValue('gray.600', 'gray.600');
+
   return (
-    <div className={`chatbot-container ${isOpen ? 'open' : ''}`}>
-      <div className="chatbot-header" onClick={() => setIsOpen(!isOpen)}>
-        <h2>Chatbot</h2>
-        <span>{isOpen ? '-' : '+'}</span>
-      </div>
-      {isOpen && (
-        <div className="chatbot-body">
-          <div className="chatbot-messages">
-            {messages.map((message, index) => (
-              <div key={index} className={`message ${message.sender}`}>
-                {message.text}
-              </div>
-            ))}
-          </div>
-          <div className="chatbot-questions">
+    <Box position="fixed" bottom="24px" right="24px" zIndex="1000">
+      <IconButton
+        colorScheme="blue"
+        icon={isOpen ? <CloseIcon /> : <ChatIcon />}
+        onClick={onToggle}
+        rounded="full"
+        size="lg"
+        shadow="md"
+      />
+      <Collapse in={isOpen} animateOpacity>
+        <Box
+          w="320px"
+          h="440px"
+          bg={bg}
+          color="white"
+          rounded="xl"
+          mt={3}
+          p={4}
+          boxShadow="xl"
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
+          <Flex justify="space-between" align="center" mb={3}>
+            <Heading size="md">Chatbot</Heading>
+          </Flex>
+
+          <Box flex="1" overflowY="auto" p={2}>
+            <VStack align="stretch" spacing={2}>
+              {messages.map((msg, i) => (
+                <Box
+                  key={i}
+                  alignSelf={msg.sender === 'user' ? 'flex-end' : 'flex-start'}
+                  bg={msg.sender === 'user' ? messageBgUser : messageBgBot}
+                  px={3}
+                  py={2}
+                  borderRadius="lg"
+                  maxW="80%"
+                >
+                  <Text fontSize="sm">{msg.text}</Text>
+                </Box>
+              ))}
+            </VStack>
+          </Box>
+
+          <Flex wrap="wrap" gap={2} mt={3}>
             {questions.map((q) => (
-              <button key={q.question} onClick={() => handleQuestionSelect(q.question)}>
+              <Button
+                key={q.question}
+                size="sm"
+                colorScheme="teal"
+                variant="outline"
+                flex="1 1 100%"
+                onClick={() => handleQuestionSelect(q.question)}
+              >
                 {q.question}
-              </button>
+              </Button>
             ))}
-          </div>
-        </div>
-      )}
-    </div>
+          </Flex>
+        </Box>
+      </Collapse>
+    </Box>
   );
 };
 

@@ -1,9 +1,17 @@
-import { StrictMode, useEffect } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import './index.css';
+import App from './App.jsx';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+
+const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
+});
 
 const Root = () => {
   useEffect(() => {
@@ -12,7 +20,9 @@ const Root = () => {
 
   return (
     <StrictMode>
-      <App />
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
     </StrictMode>
   );
 };

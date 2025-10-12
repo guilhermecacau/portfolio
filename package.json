@@ -12,9 +12,12 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.27.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@react-spring/web": "^10.0.3",
     "aos": "^2.3.4",
-    "framer-motion": "^12.23.22",
+    "framer-motion": "^12.23.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
