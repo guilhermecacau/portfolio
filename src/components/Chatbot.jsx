@@ -10,13 +10,14 @@ import {
   VStack,
   useDisclosure,
   useColorModeValue,
+  Spinner,
 } from '@chakra-ui/react';
 import { ChatIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Chatbot = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [messages, setMessages] = useState([]);
-  const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   const questions = [
     {
@@ -33,16 +34,38 @@ const Chatbot = () => {
     },
   ];
 
-  const handleQuestionSelect = (question) => {
-    setSelectedQuestion(question);
+  // Função que simula digitação gradual
+  const typeMessage = (fullText, delay = 25) =>
+    new Promise((resolve) => {
+      let currentText = '';
+      const interval = setInterval(() => {
+        currentText += fullText[currentText.length];
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1].text = currentText;
+          return updated;
+        });
+        if (currentText.length === fullText.length) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, delay);
+    });
+
+  const handleQuestionSelect = async (question) => {
     const answer = questions.find((q) => q.question === question)?.answer;
-    if (answer) {
-      setMessages([
-        ...messages,
-        { text: question, sender: 'user' },
-        { text: answer, sender: 'bot' },
-      ]);
-    }
+    if (!answer) return;
+
+    // Adiciona mensagem do usuário
+    setMessages((prev) => [...prev, { text: question, sender: 'user' }]);
+    setIsTyping(true);
+
+    // Espera um tempinho antes de o bot responder
+    setTimeout(async () => {
+      setMessages((prev) => [...prev, { text: '', sender: 'bot' }]);
+      await typeMessage(answer, 25);
+      setIsTyping(false);
+    }, 600);
   };
 
   const bg = useColorModeValue('gray.800', 'gray.700');
@@ -89,9 +112,26 @@ const Chatbot = () => {
                   borderRadius="lg"
                   maxW="80%"
                 >
-                  <Text fontSize="sm">{msg.text}</Text>
+                  <Text fontSize="sm" whiteSpace="pre-line">
+                    {msg.text}
+                  </Text>
                 </Box>
               ))}
+              {isTyping && (
+                <Box
+                  alignSelf="flex-start"
+                  bg={messageBgBot}
+                  px={3}
+                  py={2}
+                  borderRadius="lg"
+                  maxW="80%"
+                  display="flex"
+                  alignItems="center"
+                  gap={2}
+                >
+                  <Spinner size="xs" /> <Text fontSize="sm">Digitando...</Text>
+                </Box>
+              )}
             </VStack>
           </Box>
 
@@ -104,6 +144,7 @@ const Chatbot = () => {
                 variant="outline"
                 flex="1 1 100%"
                 onClick={() => handleQuestionSelect(q.question)}
+                isDisabled={isTyping}
               >
                 {q.question}
               </Button>
