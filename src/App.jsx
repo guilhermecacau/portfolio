@@ -3,62 +3,50 @@ import ProjectCard from './components/ProjectCard'
 import Chatbot from './components/Chatbot'
 import Typewriter from 'typewriter-effect';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const projects = [
   {
     title: 'Server-Side Drone System',
     description: 'A drone system with chasing and attack systems.',
-    video: 'https://www.youtube.com/embed/SGT2bxvnIvU', // Replace with your video link
-    link: '#' // Replace with your project link
+    video: 'https://www.youtube.com/embed/SGT2bxvnIvU', // Substitua com o link do seu vídeo
+    link: '#' // Substitua com o link para o seu projeto
   },
   {
     title: 'A elevator system',
     description: 'A elevator system for games with 2+ places.',
-    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Replace with your video link
-    link: '#' // Replace with your project link
+    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Substitua com o link do seu vídeo
+    link: '#' // Substitua com o link para o seu projeto
   },
     {
-    title: 'Racing Minigame',
-    description: 'Development of a racing minigame with power-ups, different tracks, and a leaderboard.',
-    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Replace with your video link
-    link: '#' // Replace with your project link
+    title: 'Minigame de Corrida',
+    description: 'Desenvolvimento de um minigame de corrida com power-ups, diferentes pistas e placar de líderes.',
+    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Substitua com o link do seu vídeo
+    link: '#' // Substitua com o link para o seu projeto
   }
 ];
 
 function App() {
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
 
   return (
     <div className="App">
       <header className="header">
         <nav>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
         <section id="about" className="hero" data-aos="fade-in">
-          <h1>Hello, I'm Guilherme</h1>
+          <h1>Olá, eu sou o Guilherme</h1>
           <div className="subtitle">
             <Typewriter
               options={{
-                strings: ['Roblox Scripter', 'Game Developer', 'Experience Creator'],
+                strings: ['Scripter Roblox', 'Desenvolvedor de Jogos', 'Criador de Experiências'],
                 autoStart: true,
                 loop: true,
               }}
@@ -67,29 +55,27 @@ function App() {
         </section>
 
         <section id="projects" data-aos="fade-up">
-          <h2>My Projects</h2>
-          <div className="project-carousel">
-            <Slider {...sliderSettings}>
-              {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </Slider>
+          <h2>Meus Projetos</h2>
+          <div className="project-grid">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
           </div>
         </section>
 
         <section id="skills" data-aos="fade-up">
-          <h2>My Skills</h2>
+          <h2>Minhas Habilidades</h2>
           <div className="skills-container">
             <ul>
               <li>Luau (Roblox Lua)</li>
               <li>Knit</li>
               <li>React</li>
-              <li>Typewriter</li>
+              <li>Typerwriter</li>
               <li>Github</li>
-              <li>Object-Oriented Programming (OOP)</li>
-              <li>UI Development</li>
-              <li>Data Management (DataStores)</li>
-              <li>Optimization and Performance</li>
+              <li>Programação Orientada a Objetos (OOP)</li>
+              <li>Desenvolvimento de UI</li>
+              <li>Gerenciamento de Dados (DataStores)</li>
+              <li>Otimização e Performance</li>
             </ul>
           </div>
         </section>
