@@ -79,11 +79,10 @@ function App() {
           </div>
 
           <br/><br/><br/><br/>
-          <b>
+          <h2 style={{fontWeight: 900}}>
             I'm a Roblox scripter with +9 months of
-            experience creating systems, mechanics, and scripts for
-            a smooth gameplay.
-          </b>
+            experience creating systems and mechanics.
+          </h2>
         </section>
 
 
@@ -116,7 +115,7 @@ function App() {
 
         <section id="contact" data-aos="fade-up">
           <h2>Contact</h2>
-          <p>You can contact me at anytime!</p>
+          <p>You can contact me at anytime! Just please give me a structured and explained quote of your project.</p>
           <div className="social-links">
             <a
               href="https://discord.com/users/1136755556036644878"

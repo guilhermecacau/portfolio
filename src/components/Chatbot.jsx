@@ -32,7 +32,7 @@ const Chatbot = () => {
         "I can accept Discord Nitro (Gift Cards), but you need to ask for this method and I need to accept. I reserve the right to refuse this method.",
     },
     {
-      question: "Do you have any rights reserved??",
+      question: "Do you have any rights reserved?",
       answer:
         "Yes. I have all rights reserved on my scripts. Also, I reserve the right to refuse service to anyone.",
     },
