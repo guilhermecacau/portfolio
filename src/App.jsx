@@ -42,20 +42,17 @@ function App() {
 
       <main>
         <section id="about" className="hero" data-aos="fade-in">
-          <h1>Hi, I'm Guilherme, also known as</h1>
-          <h2 style={{
+          <h1>Hi, I'm Guilherme, also known as <span style={{
             background: "linear-gradient(90deg, #ff0000, #ffff00)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             fontWeight: "bold"
-          }}> 
-            MC_Worker 
-          </h2>
+          }}>MC_Worker</span></h1>
 
           <div className="subtitle">
             <Typewriter
               options={{
-                strings: ['Roblox Scripter', 'Desenvolvedor de Jogos', 'Criador de Experiências'],
+                strings: ['Roblox Scripter', 'Game Developer', 'Script Analyst', 'Luau Programmer'],
                 autoStart: true,
                 loop: true,
               }}
@@ -91,7 +88,7 @@ function App() {
 
         <section id="contact" data-aos="fade-up">
           <h2>Contact</h2>
-          <p>You can contact me at anytime</p>
+          <p>You can contact me at anytime!</p>
           <div className="social-links">
             <a href="https://discord.com/users/1136755556036644878" target="_blank" rel="noopener noreferrer"><FaDiscord /></a>
           </div>

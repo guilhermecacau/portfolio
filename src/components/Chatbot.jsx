@@ -24,13 +24,21 @@ const Chatbot = () => {
       question: 'Do you accept %?',
       answer: 'Sometimes. Only if I see that your game/game idea is interesting and see good potential in it.',
     },
-    {
-      question: 'Quais tecnologias você usa?',
-      answer: 'Eu uso React, Node.js, Python e outras tecnologias modernas.',
+     {
+      question: 'Do you have any extra payment methods besides Robux (and sometimes %)?',
+      answer: 'I can accept Discord Nitro (Gift Cards), but you need to ask for this method and I need to accept. I reserve the right to refuse this method.',
     },
     {
-      question: 'Onde posso ver seus projetos?',
-      answer: 'Você pode ver meus projetos aqui no portfólio ou no meu GitHub.',
+      question: 'Do you have any rights reserved??',
+      answer: 'Yes. I have all rights reserved on my scripts. Also, I reserve the right to refuse service to anyone.',
+    },
+    {
+      question: 'Can I dm you on discord asking price for a script?',
+      answer: 'Yes, you can dm me just to know the price for a script. Just explain what exactly you want and I will give you a price quote. And do not start with "hi can you say for me the price for a brainrot game?" or something like it, please give me a explained quote.',
+    },
+    {
+      question: 'How much time can you dedicate to my project?',
+      answer: 'It may vary depending on my personal routine, the number of projects I have and the size of your script project, but I usually dedicate 1 to 3 weeks for small/medium scripts. I will dm you an estimated delivery time after analyzing your project.',
     },
   ];
 
@@ -63,7 +71,7 @@ const Chatbot = () => {
     // Espera um tempinho antes de o bot responder
     setTimeout(async () => {
       setMessages((prev) => [...prev, { text: '', sender: 'bot' }]);
-      await typeMessage(answer, 25);
+      await typeMessage(answer, 40);
       setIsTyping(false);
     }, 600);
   };
@@ -97,7 +105,7 @@ const Chatbot = () => {
           justifyContent="space-between"
         >
           <Flex justify="space-between" align="center" mb={3}>
-            <Heading size="md">Chatbot</Heading>
+            <Heading size="md">Gui Chatbot 🍟</Heading>
           </Flex>
 
           <Box flex="1" overflowY="auto" p={2}>
@@ -140,7 +148,7 @@ const Chatbot = () => {
               <Button
                 key={q.question}
                 size="sm"
-                colorScheme="teal"
+                colorScheme="red"
                 variant="outline"
                 flex="1 1 100%"
                 onClick={() => handleQuestionSelect(q.question)}
