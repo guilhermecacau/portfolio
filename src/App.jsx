@@ -5,8 +5,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const projects = [
   {
-    title: 'Sistema de Inventário Avançado',
-    description: 'Um sistema de inventário completo com suporte para itens, categorias e customização de UI.',
+    title: 'Server-Side Drone System',
+    description: 'A drone system with chasing and attack systems.',
     video: 'https://www.youtube.com/embed/SGT2bxvnIvU', // Substitua com o link do seu vídeo
     link: '#' // Substitua com o link para o seu projeto
   },
