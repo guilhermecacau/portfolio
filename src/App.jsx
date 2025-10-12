@@ -32,7 +32,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="#about-me">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
               <a href="#projects">Projetos</a>
@@ -77,60 +77,15 @@ function App() {
               }}
             />
           </div>
-        </section>
 
-        <section
-          id="about-me"
-          data-aos="fade-up"
-          style={{
-            padding: "4rem 2rem",
-            backgroundColor: "#1a1a1a",
-            color: "white",
-            borderRadius: "12px",
-            margin: "2rem 0",
-          }}
-        >
-          <h2>About Me</h2>
-          <p
-            style={{
-              maxWidth: "700px",
-              margin: "1rem auto",
-              lineHeight: "1.6",
-            }}
-          >
-            I'm <strong>Guilherme</strong>, or <span
-              style={{
-                background: "linear-gradient(90deg, #ff0000, #ffff00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontWeight: "bold",
-              }}
-            >
-              MC_Worker
-            </span> for some, and I'm a Roblox scripter with +9 months of
+          <span>
+            I'm a Roblox scripter with +9 months of
             experience creating systems, mechanics, and scripts for
             a smooth gameplay.
-          </p>
-
-          <div
-            style={{
-              marginTop: "2rem",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/ZlUNj4mtnKw"
-              title="Checkpoint Saving System"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ borderRadius: "12px", maxWidth: "100%" }}
-            ></iframe>
-          </div>
+          </span>
         </section>
+
+
 
         <section id="projects" data-aos="fade-up">
           <h2>Examples of my work</h2>
