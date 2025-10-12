@@ -1,62 +1,134 @@
-import './App.css'
-import ProjectCard from './components/ProjectCard'
-import Chatbot from './components/Chatbot'
-import Typewriter from 'typewriter-effect';
-import { FaGithub, FaLinkedin, FaTwitter, FaDiscord } from 'react-icons/fa';
+import "./App.css";
+import ProjectCard from "./components/ProjectCard";
+import Chatbot from "./components/Chatbot";
+import Typewriter from "typewriter-effect";
+import { FaGithub, FaLinkedin, FaTwitter, FaDiscord } from "react-icons/fa";
 
 const projects = [
   {
-    title: 'Server-Side Drone System',
-    description: 'A drone system with chasing and attack systems.',
-    video: 'https://www.youtube.com/embed/SGT2bxvnIvU', // Substitua com o link do seu vídeo
-    link: '#' // Substitua com o link para o seu projeto
+    title: "Server-Side Drone System",
+    description: "A drone system with chasing and attack systems.",
+    video: "https://www.youtube.com/embed/SGT2bxvnIvU", // Substitua com o link do seu vídeo
+    link: "#", // Substitua com o link para o seu projeto
   },
   {
-    title: 'A elevator system',
-    description: 'A elevator system for games with 2+ places.',
-    video: 'https://www.youtube.com/embed/tYSgt4xSKGk', // Substitua com o link do seu vídeo
-    link: '#' // Substitua com o link para o seu projeto
+    title: "A elevator system",
+    description: "A elevator system for games with 2+ places.",
+    video: "https://www.youtube.com/embed/tYSgt4xSKGk", // Substitua com o link do seu vídeo
+    link: "#", // Substitua com o link para o seu projeto
   },
-    {
-    title: 'Checkpoint Saving System',
-    description: 'A checkpoint saving system for obby games.',
-    video: 'https://www.youtube.com/embed/ZlUNj4mtnKw', // Substitua com o link do seu vídeo
-    link: '#' // Substitua com o link para o seu projeto
-  }
+  {
+    title: "Checkpoint Saving System",
+    description: "A checkpoint saving system for obby games.",
+    video: "https://www.youtube.com/embed/ZlUNj4mtnKw", // Substitua com o link do seu vídeo
+    link: "#", // Substitua com o link para o seu projeto
+  },
 ];
 
 function App() {
-
   return (
     <div className="App">
       <header className="header">
         <nav>
           <ul>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li>
+              <a href="#about-me">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projetos</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
         </nav>
       </header>
 
       <main>
         <section id="about" className="hero" data-aos="fade-in">
-          <h1>Hi, I'm Guilherme, also known as <span style={{
-            background: "linear-gradient(90deg, #ff0000, #ffff00)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontWeight: "bold"
-          }}>MC_Worker</span></h1>
+          <h1>
+            Hi, I'm Guilherme, also known as{" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #ff0000, #ffff00)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontWeight: "bold",
+              }}
+            >
+              MC_Worker
+            </span>
+          </h1>
 
           <div className="subtitle">
             <Typewriter
               options={{
-                strings: ['Roblox Scripter', 'Game Developer', 'Script Analyst', 'Luau Programmer'],
+                strings: [
+                  "Roblox Scripter",
+                  "Game Developer",
+                  "Script Analyst",
+                  "Luau Programmer",
+                ],
                 autoStart: true,
                 loop: true,
               }}
             />
+          </div>
+        </section>
+
+        <section
+          id="about-me"
+          data-aos="fade-up"
+          style={{
+            padding: "4rem 2rem",
+            backgroundColor: "#1a1a1a",
+            color: "white",
+            borderRadius: "12px",
+            margin: "2rem 0",
+          }}
+        >
+          <h2>About Me</h2>
+          <p
+            style={{
+              maxWidth: "700px",
+              margin: "1rem auto",
+              lineHeight: "1.6",
+            }}
+          >
+            I'm <strong>Guilherme</strong>, or <span
+              style={{
+                background: "linear-gradient(90deg, #ff0000, #ffff00)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontWeight: "bold",
+              }}
+            >
+              MC_Worker
+            </span> for some, and I'm a Roblox scripter with +9 months of
+            experience creating systems, mechanics, and scripts for
+            a smooth gameplay.
+          </p>
+
+          <div
+            style={{
+              marginTop: "2rem",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ZlUNj4mtnKw"
+              title="Checkpoint Saving System"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ borderRadius: "12px", maxWidth: "100%" }}
+            ></iframe>
           </div>
         </section>
 
@@ -73,7 +145,7 @@ function App() {
           <h2>Which concepts can I apply in my scripts?</h2>
           <div className="skills-container">
             <ul>
-              <li>Client-Server Connections (RemoteEvents/RemoteFunctions/BindableEvents)</li>
+              <li>Client-Server Connections (RemoteEvents)</li>
               <li>Modularity (ModuleScripts)</li>
               <li>Thermal Throttling (Rate limiting)</li>
               <li>Manipulation with Coroutines/task</li>
@@ -90,7 +162,13 @@ function App() {
           <h2>Contact</h2>
           <p>You can contact me at anytime!</p>
           <div className="social-links">
-            <a href="https://discord.com/users/1136755556036644878" target="_blank" rel="noopener noreferrer"><FaDiscord /></a>
+            <a
+              href="https://discord.com/users/1136755556036644878"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaDiscord />
+            </a>
           </div>
         </section>
       </main>
@@ -100,7 +178,7 @@ function App() {
       </footer>
       <Chatbot />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
