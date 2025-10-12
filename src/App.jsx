@@ -1,5 +1,6 @@
 import './App.css'
 import ProjectCard from './components/ProjectCard'
+import Chatbot from './components/Chatbot'
 import Typewriter from 'typewriter-effect';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
@@ -93,6 +94,7 @@ function App() {
       <footer>
         <p>&copy; 2025 Guilherme. Todos os direitos reservados.</p>
       </footer>
+      <Chatbot />
     </div>
   )
 }
