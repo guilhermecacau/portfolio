@@ -35,7 +35,7 @@ function App() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#projects">Projetos</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
               <a href="#skills">Skills</a>
